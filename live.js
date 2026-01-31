@@ -1,7 +1,7 @@
-const target = document.getElementById("active");
-const components = ["CPU", "RAM", "GPU", "Storage"];
-
 setInterval(() => {
-  target.textContent =
-    components[Math.floor(Math.random() * components.length)];
-}, 1000);
+  if (!window.vm || vm.state !== "running") return;
+
+  cpuUse.textContent = vm.usage.cpu.toFixed(1) + "%";
+  ramUse.textContent = vm.usage.ram.toFixed(1) + "%";
+  diskUse.textContent = vm.usage.storage.toFixed(1) + "%";
+}, 500);
