@@ -1,18 +1,24 @@
-import { encryptObject } from "./crypto.js";
+import { encryptObject, decryptFromHash } from "./crypto.js";
 
-async function createMachine() {
+document.getElementById("build").onclick = async () => {
   const machine = {
     cpu: {
-      brand: "MyOwnCPU",
-      model: "X-1",
-      ghz: 4.8
+      brand: cpuBrand.value,
+      model: cpuModel.value,
+      ghz: cpuGHz.value
     },
-    ram: 16,
+    ram: ram.value,
     activeComponent: "CPU"
   };
 
-  const enc = await encryptObject(machine);
+  const hash = await encryptObject(machine);
+  location.hash = hash;
+  output.value = hash;
+};
 
-  location.hash =
-    `data=${enc.data}&iv=${enc.iv}&key=${enc.key}`;
-}
+window.onload = async () => {
+  const data = await decryptFromHash();
+  if (data) {
+    output.value = JSON.stringify(data, null, 2);
+  }
+};
