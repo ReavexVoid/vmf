@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Virtual Machine Forge</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Virtual Machine Forge</h1>
+
+<section>
+  <h2>Machine Builder</h2>
+  <input id="cpuBrand" placeholder="CPU Brand">
+  <input id="cpuModel" placeholder="CPU Model">
+  <input id="cpuGHz" placeholder="GHz">
+  <input id="ram" placeholder="RAM (GB)">
+  <button id="build">Build & Share</button>
+</section>
+
+<section>
+  <h2>Live Component Usage</h2>
+  <div id="active">Idle</div>
+</section>
+
+<section>
+  <h2>Encrypted Data</h2>
+  <textarea id="output" rows="6"></textarea>
+</section>
+
+<script type="module" src="app.js"></script>
+<script type="module" src="live.js"></script>
+</body>
+</html>
