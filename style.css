@@ -1,0 +1,25 @@
+body {
+  background:#0d0d0d;
+  color:#e0e0e0;
+  font-family: monospace;
+  padding: 20px;
+}
+
+input, button, textarea {
+  background:#111;
+  color:#0f0;
+  border:1px solid #333;
+  padding:6px;
+  margin:4px;
+}
+
+button:hover {
+  background:#0f0;
+  color:#000;
+}
+
+section {
+  border:1px solid #222;
+  padding:10px;
+  margin-bottom:15px;
+}
